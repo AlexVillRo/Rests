@@ -1,0 +1,32 @@
+<div class="container" >
+  <p>Lista de empelados</p>
+
+  <button routerLink="/add" type="button" class="btn btn-danger">Agregar </button>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Funciones</th>
+          <th scope="col">Jefe</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleados of ListarEmpleado">
+          <th>{{empleados.Id}}</th>
+          <td>{{empleados.NombreEmpleado}}</td>
+          <td>{{empleados.Funciones}}</td>
+          <td>{{empleados.Jefe}}</td>
+          <td>
+              <button (click)="modificar(empleados.Id)" type="button" class="btn btn-primary">Editar</button>
+          </td>
+          <td>
+              <button (click)="eliminar(empleados.Id)" type="button" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
